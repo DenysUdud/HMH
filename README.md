@@ -5,7 +5,16 @@ The result of this project is constructive web-app which defines the prices, by 
 
 To run the app you should install such tools:
 
-Python 3
-The link for insttalling https://www.python.org/downloads/
+Python 3 :   link for insttalling https://www.python.org/downloads/
+
+Flask : $sudo pip install flask
+
+Bs4 : $sudo pip install bs4
+
+Geopy : $sudo pip install geopy
+
+author info: Denys Udud, student of Ukrainian Catholic University.
+
+
 
 
