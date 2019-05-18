@@ -16,6 +16,8 @@ def get_html(city_name):
 	This is function for getting html page from the site. Url - is the
 	address of the site.
 	'''
+
+	# gets json of autocomplete which contains id of city.
 	j = requests.get("https://hotels24.ua/ajax.php?s={}&e=ac&target=universalCompleter&lang_code=en".format(city_name)).json()["result"][1]['cities'][0]
 	city_id = j['cityId']
 	weight = j['weight']

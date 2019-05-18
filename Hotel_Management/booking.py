@@ -10,11 +10,13 @@ class Booking:
 				 commission_percent, site):
 		"""
 		A method used to initialise booking.
-		:param checkin: date of checkin in form: 'yyyy-mm-dd'
-		:param checkout: date of checkout in form: 'yyyy-mm-dd'
-		:param checkin_hour:
-		:param price_p_night: int
-		:param additional_costs: Array
+		:param name: int: name of booking
+		:param checkin: date of checkin in form: 'yyyy-mm-dd': str
+		:param checkout: date of checkout in form: 'yyyy-mm-dd': str
+		:param checkin_hour: int: hour of checkin and checkout
+		:param price_p_night: int : price per night
+		:param additional_costs: DynamicArray with AdditionalCost
+								 objects
 		"""
 		self._name = name
 		self.checkin = checkin
@@ -31,21 +33,21 @@ class Booking:
 
 	def get_checkin(self):
 		"""
-		A method used to get checkin date
-		:return: str
+		A method used to get checkin date.
+		:return: str: "2019-12-12"
 		"""
 		return self.checkin
 
 	def get_checkout(self):
 		"""
 		A method used to return checkout date
-		:return:
+		:return: str: "2019-12-12"
 		"""
 		return self.checkout
 
 	def get_name(self):
 		"""
-		A method used to return name of booking.
+		A method used to return the name of booking.
 		:return: str
 		"""
 		return self._name
@@ -92,7 +94,7 @@ class Booking:
 	def get_numdays(self, date_1, date_2):
 		"""
 		A function used to get sum of all dates
-		between two dates - 1.
+		between two dates.
 		:param date_1: str: "yyyy-mm-dd"
 		:param date_2: str: "yyyy-mm-dd"
 		:return: int
@@ -122,7 +124,7 @@ class Booking:
 		"""
 		A method used to get information about str from str date
 		in format 'yyyy-mm-dd'
-		:param date_str:
+		:param date_str: str: 'yyyy-mm-dd'
 		:return: tuple
 		"""
 		year = date_str.split("-")[0]
@@ -132,7 +134,7 @@ class Booking:
 
 	def get_income(self):
 		"""
-		A method used to get income.
+		A method used to get income. Income = price per night * days
 		:return: int
 		"""
 		return self._price_p_night * self.num_days
@@ -156,7 +158,7 @@ class Booking:
 	def get_price(self):
 		"""
 		A method returns price per night
-		:return:
+		:return: int
 		"""
 		return self._price_p_night
 
@@ -164,6 +166,8 @@ class Booking:
 		"""
 		A method used to return information about
 		all costs in str form.
+		example:
+		"Dinner - 1000; Clothes - 800"
 		:return: str
 		"""
 		string = ""
@@ -176,7 +180,7 @@ class Booking:
 	def get_sum_costs(self):
 		"""
 		A method returns sum of all additional costs.
-		:return: None
+		:return:
 		"""
 		add_costs = self._additional_costs
 		sum = 0
@@ -187,6 +191,7 @@ class Booking:
 	def get_revenue(self):
 		"""
 		A method used to return revenue.
+		Revenue = income - sum costs
 		:return: int
 		"""
 		return self.get_income() - self.get_sum_costs()
@@ -195,8 +200,10 @@ class Booking:
 		"""
 		A method used to return information about booking in str
 		form.
-		id, checkin, checkout, num_days, price_per_night, site, revenue, cost [additional cost1; additional cost2 ...]
-		:return: str
+		:return: str :  id, checkin, checkout, num_days,
+						price_per_night, site,
+						revenue, cost [additional cost1;
+										additional cost2 ...]
 		"""
 		if self.status is True:
 			stat = "active"
@@ -220,6 +227,7 @@ class Additional_cost:
 	"""
 	def __init__(self, name, cost):
 		"""
+		A method used to initialise additional cost.
 		:param name:
 		:param cost:
 		"""
@@ -227,7 +235,15 @@ class Additional_cost:
 		self._cost = cost
 
 	def get_name(self):
+		"""
+		A method returns name of additional cost
+		:return: str
+		"""
 		return self._name
 
 	def get_cost(self):
+		"""
+		A method used to return price of additional cost.
+		:return: int
+		"""
 		return self._cost

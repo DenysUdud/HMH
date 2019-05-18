@@ -25,6 +25,7 @@ class MainMenu:
 		ident = True
 		print("🏠Welcome to HMH (Hotel Manager Helper) main menu🏘️\n",
 				"⬇️ Here is menus of programme ⬇️")
+		# ident defines whether we should be in current section
 		while ident is True:
 			print("Price Analysis   |    Manage Hotel   |   Quit")
 			menu = input("Enter menu: ")
@@ -45,38 +46,53 @@ class MainMenu:
 						  "rooms\n" +\
 						  "manage room\ndelete room\n")
 					command = input("Enter command: ").strip()
+
 					if command == "print rooms":
 						string = self.manager.run_command(command)
 						print(string)
+
 					elif command == "exit":
 						self.manager.run_command(command)
 						quit = True
+
 					elif command in "add room":
 						self.manager.run_command(command)
+
 					elif command in "delete room":
 						num = input("Enter number (id) of room: ")
 						self.manager.run_command(
 							command + " {}".format(num))
 
 					elif "manage room" in command:
+						# quit is identifier whether we should be
+						# in manage menu
 						quit_1 = False
+
 						num = input("Enter number (id) of room: ")
+
+						# gets change current room
 						try:
 							self.manager.run_command(
 								command + " {}".format(num))
 						except IndexError:
 							print("No such room in your hotel!")
 							break
+
 						while quit_1 is not True:
 							print("Enter what action you " +
 								  "want to do with room {}:".format(
 									  self.manager.current_room._name)
 								  )
+
+							# prints possible ways
 							print("add booking to current room | " +
 								  "see current room's bookings | current room show calendar\n" +
 								  "current room del booking | cur" +
 								  "rent room add expenses | quit")
+
 							command = input("Enter command: ").strip()
+
+							# read and work with command
 							if command == "add booking to current room":
 								checkin = input("Enter checkin date in format yyyy-mm-dd: ").strip()
 								checkout = input("Enter checkout date in format yyyy-mm-dd: ").strip()
@@ -89,13 +105,17 @@ class MainMenu:
 									price_p_night, additional_costs, commission_percent,
 									site)
 								print("New booking was added")
+
 							elif command == "see current room's bookings":
 								print(self.manager.see_curr_room_bookings())
+
 							elif command == "current room del booking":
 								num = int(input("Enter id of booking you want delete: "))
 								self.manager.curr_room_del_booking(num)
+
 							elif command == "current room show calendar":
 								self.manager.curr_room_write_calendar()
+
 							elif command == "current room add expenses":
 								id_book = int(input("Enter id of booking: "))
 								name = input("Enter name of expense: ").strip()
@@ -105,7 +125,10 @@ class MainMenu:
 																 price)
 							elif command == "quit":
 								quit_1 = True
+
 			elif menu.strip() == "Statistic":
+				# This section will be added as soon as next update
+				# will be released.
 				pass
 
 if __name__ == "__main__":

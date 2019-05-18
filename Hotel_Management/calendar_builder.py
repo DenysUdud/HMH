@@ -5,6 +5,19 @@ import matplotlib.pyplot as plt
 
 
 def plot_calendar(days, months):
+    """
+    A function builds calendar with pointed dates.
+    e.g
+    plot_calendar([2,3,4,5,6,9], [7,7,7,7,7,9]).
+    There will be build calendar with such pointed days: 02.07-06.07
+    and 09.09 (dd.mm)
+
+    :param days: list: list with days of months, which will be
+                        pointed.
+    :param months: list: list with number of months in which days
+                        will be pointed.
+    :return: None
+    """
     plt.figure(figsize=(9, 3))
     # non days are grayed
     ax = plt.gca().axes

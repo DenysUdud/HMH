@@ -9,6 +9,9 @@ class Hotel:
 	A class used to represent hotel.
 	"""
 	def __init__(self):
+		"""
+		A method used to initialise a Hotel.
+		"""
 		self._rooms = []
 		self._num_rooms = 0
 		for i in range(self._num_rooms):
@@ -16,7 +19,7 @@ class Hotel:
 
 	def getroom(self, num):
 		"""
-		A method used to get certain room of hotel
+		A method used to get certain room of hotel.
 		:param num: int
 		:return: object
 		"""
@@ -24,7 +27,8 @@ class Hotel:
 
 	def save(self):
 		"""
-		A method used to save hotel to file.
+		A method used to save hotel to the file.
+		Returns name of file.
 		:return: str
 		"""
 		with open("hotel.csv", "w", encoding="UTF-8") as file:
@@ -35,7 +39,7 @@ class Hotel:
 
 	def open(self):
 		"""
-		A method used to open hotel.
+		A method used to open hotel from file.
 		:return:
 		"""
 		with open("hotel.csv", "r", encoding="UTF-8") as csv_file:
@@ -58,7 +62,7 @@ class Hotel:
 	def delroom(self, num):
 		"""
 		A method used to delete certain room from hotel
-		:param num: int
+		:param num: int: number (id) of room
 		:return:
 		"""
 		for i in range(self._num_rooms):

@@ -24,6 +24,9 @@ class Hotel_Manager:
 
 		exit: exits from management, save files
 		add room : adds room to your hotel
+		print rooms: prints room
+		manage room: opens rooms managing
+		delete room: delete certain room
 		:param command:
 		:return:
 		"""
@@ -48,22 +51,24 @@ class Hotel_Manager:
 			return 
 
 	def add_booking_to_current_room(self, checkin, checkout,
-				 price_p_night, additional_costs, commission_percent,
-				 site):
+									price_p_night, additional_costs,
+									commission_percent, site):
 		"""
 		A method used to add booking to current room of hotel.
-		:param id_num: int
-		:param checkin: str
-		:param checkout: str
-		:param price_p_night: int
-		:param additional_costs: Array with additional costs
+		:param id_num: int: number of booking
+		:param checkin: str: "yyyy-mm-dd"
+		:param checkout: str "yyyy-mm-dd"
+		:param price_p_night: int : price per night
+		:param additional_costs: DynamicArray with additional costs
 		:param commission_percent: int
-		:param site: str
+		:param site: str : site where room was booked
 		:return:
 		"""
 		self.current_room.add_booking(checkin, checkout,
-				 price_p_night, additional_costs, commission_percent,
-				 site)
+				 					  price_p_night,
+									  additional_costs,
+									  commission_percent,
+				 					  site)
 
 	def see_curr_room_bookings(self):
 		"""
@@ -75,7 +80,7 @@ class Hotel_Manager:
 	def curr_room_del_booking(self, num_booking):
 		"""
 		A method used to delete booking with certain num
-		:param num_booking:
+		:param num_booking: id of booking - number e.g. 1
 		:return:
 		"""
 		self.current_room.del_booking(num_booking)
@@ -90,6 +95,7 @@ class Hotel_Manager:
 	def exit(self):
 		"""
 		A method used to exit the programme.
+		Saves hotel, rooms to files.
 		:return:
 		"""
 		self.hotel.save()

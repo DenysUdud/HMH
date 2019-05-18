@@ -30,10 +30,15 @@ class Room:
 		:return:
 		"""
 		name = "id: {}".format(self._num_bookings + 1)
+
+		# defines booking
 		booking = Booking(name, checkin, checkout, 12,
-				 price_p_night, additional_costs, commission_percent,
-				 site)
+						  price_p_night, additional_costs,
+						  commission_percent, site)
+
+		# create new node for representing booking
 		newNode = Node(item=booking, next=None)
+
 		if self._num_bookings == 0:
 			self._head = newNode
 		else:
@@ -44,11 +49,15 @@ class Room:
 	def del_booking(self, num_booking):
 		"""
 		A method used to delete booking.
-		:param booking: object
+		:param booking: object Booking
 		:return:
 		"""
 		name = "id: {}".format(num_booking)
+
+		# crete pointer to run throug the file
 		pointer = self._head
+
+		# run trough the file
 		while pointer is not None:
 			if pointer.item.get_name() == name:
 				if pointer is self._head:
@@ -118,26 +127,31 @@ class Room:
 		A method used to build calendar of bookings.
 		:return:
 		"""
+		# creates two lists for writing days and months
 		days_lst = []
 		month_lst = []
 
 		pointer = self._head
+		# go trough bookings
 		while pointer is not None:
 			# yyyy-mm-dd
+			# gets all days between checkin and checkout
 			between = self.get_days_between(pointer.item.get_checkin(),
 											pointer.item.get_checkout())
 			days = between[0]
 			months = between[1]
+
 			days_lst += days
 			month_lst += months
 			pointer = pointer.next
+		# build calendar
 		plot_calendar(days_lst, month_lst)
 
 	def add_costs(self, id_num, name, sum):
 		"""
 		A method used to add costs to booking.
-		:param name: str
-		:param sum: int
+		:param name: str: name of cost
+		:param sum: int: price of offer
 		:return: None
 		"""
 		booking = self.find_booking(id_num)

@@ -11,17 +11,19 @@ def run_scrap_terminal():
 	A function used to run scrapping programme in the terminal.
 	:return: None
 	"""
-	
 	print("💹 You are in Price Analysis menu. 💹\n",
 		  "⬇️ To run an analysis of your local hotels - type "
 		  "requested data below (if you do not want mention stars "
 		  "and type of accommodation - enter '-') ⬇️")
 
+	# definition whether
 	definit = False
 	while definit is False:
 		try:
 			city_name = input("Enter name of city: ").strip()
-			# city_size = int(input("Enter size of your city (1 <= value <= 10): "))
+			# city_size = int(input("Enter size of your city
+			# (1 <= value <= 10): "))
+
 			city_size = 6
 			stars = input("Enter the number of stars hotel/room "
 						  "should have to be analysed (1-5): ")
@@ -66,6 +68,8 @@ def run_scrap_terminal():
 		if more == 'more':
 			print('⬇️ Lower than average price ⬇️')
 			string = ""
+			
+			# reads obligatory вфеф акщь сім ашдую
 			for i, p in enumerate(data['lower than average price']):
 				string += str(p) + ", "
 				if i % 20 == 0 and i != 0:
@@ -106,7 +110,6 @@ def run_scrap_terminal():
 			print(string)
 
 			# built mode graphic
-
 			x_lst = []
 			y_lst = []
 
