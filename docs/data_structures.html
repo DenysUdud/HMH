@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>data_structures package &#8212; HMH Project 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="data-structures-package">
+<h1>data_structures package<a class="headerlink" href="#data-structures-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-data_structures.arrays">
+<span id="data-structures-arrays-module"></span><h2>data_structures.arrays module<a class="headerlink" href="#module-data_structures.arrays" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="data_structures.arrays.Array">
+<em class="property">class </em><code class="descclassname">data_structures.arrays.</code><code class="descname">Array</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.Array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Implements the Array ADT using array capabilities of the ctypes
+module.</p>
+<dl class="method">
+<dt id="data_structures.arrays.Array.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.Array.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the array by setting each element to the given value.
+:param value: the value of element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="data_structures.arrays.DynamicArray">
+<em class="property">class </em><code class="descclassname">data_structures.arrays.</code><code class="descname">DynamicArray</code><span class="sig-paren">(</span><em>capacity=1</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.DynamicArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A dynamic array class a simplified Python list.</p>
+<dl class="method">
+<dt id="data_structures.arrays.DynamicArray.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.DynamicArray.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Puts the value in the end of the array.
+:param value: the value of element.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_structures.arrays.DynamicArray.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>index</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.DynamicArray.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts value at index, shifting subsequent values rightward.
+:param index: the index.
+:param value: the value that need to be inserted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_structures.arrays.DynamicArray.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.arrays.DynamicArray.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes first occurrence of value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>value</strong> – the value that need to be removed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-data_structures.node">
+<span id="data-structures-node-module"></span><h2>data_structures.node module<a class="headerlink" href="#module-data_structures.node" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="data_structures.node.Node">
+<em class="property">class </em><code class="descclassname">data_structures.node.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>item</em>, <em>next=None</em>, <em>previous=None</em><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="data_structures.node.Node.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.node.Node.next" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return next Node.
+:return:  object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="data_structures.node.Node.previous">
+<code class="descname">previous</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_structures.node.Node.previous" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return previous Node.
+:return: object</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-data_structures">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-data_structures" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">HMH Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Denys Udud.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/data_structures.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

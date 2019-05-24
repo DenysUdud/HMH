@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>booking module &#8212; HMH Project 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-booking">
+<span id="booking-module"></span><h1>booking module<a class="headerlink" href="#module-booking" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="booking.Additional_cost">
+<em class="property">class </em><code class="descclassname">booking.</code><code class="descname">Additional_cost</code><span class="sig-paren">(</span><em>name</em>, <em>cost</em><span class="sig-paren">)</span><a class="headerlink" href="#booking.Additional_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent additional cost.</p>
+<dl class="method">
+<dt id="booking.Additional_cost.get_cost">
+<code class="descname">get_cost</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Additional_cost.get_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return price of additional cost.
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Additional_cost.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Additional_cost.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method returns name of additional cost
+:return: str</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="booking.Booking">
+<em class="property">class </em><code class="descclassname">booking.</code><code class="descname">Booking</code><span class="sig-paren">(</span><em>name</em>, <em>checkin</em>, <em>checkout</em>, <em>checkin_hour</em>, <em>price_p_night</em>, <em>additional_costs</em>, <em>commission_percent</em>, <em>site</em><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class used to represent booking.</p>
+<dl class="method">
+<dt id="booking.Booking.add_cost">
+<code class="descname">add_cost</code><span class="sig-paren">(</span><em>name</em>, <em>price</em><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.add_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to add additional costs.
+:param name: str : name of add cost
+:param price: int: price of add cost
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_checkin">
+<code class="descname">get_checkin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_checkin" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to get checkin date.
+:return: str: “2019-12-12”</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_checkout">
+<code class="descname">get_checkout</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_checkout" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return checkout date
+:return: str: “2019-12-12”</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_commission">
+<code class="descname">get_commission</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_commission" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to get money which will be payed as commission.
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_costs_inf">
+<code class="descname">get_costs_inf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_costs_inf" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return information about
+all costs in str form.
+example:
+“Dinner - 1000; Clothes - 800”
+:return: str</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="booking.Booking.get_date_inf">
+<em class="property">static </em><code class="descname">get_date_inf</code><span class="sig-paren">(</span><em>date_str</em><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_date_inf" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to get information about str from str date
+in format ‘yyyy-mm-dd’
+:param date_str: str: ‘yyyy-mm-dd’
+:return: tuple</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_income">
+<code class="descname">get_income</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_income" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to get income. Income = price per night * days
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_name">
+<code class="descname">get_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return the name of booking.
+:return: str</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_numdays">
+<code class="descname">get_numdays</code><span class="sig-paren">(</span><em>date_1</em>, <em>date_2</em><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_numdays" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function used to get sum of all dates
+between two dates.
+:param date_1: str: “yyyy-mm-dd”
+:param date_2: str: “yyyy-mm-dd”
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_price">
+<code class="descname">get_price</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method returns price per night
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_revenue">
+<code class="descname">get_revenue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_revenue" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return revenue.
+Revenue = income - sum costs
+:return: int</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_status">
+<code class="descname">get_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to get status of booking. If today is date
+between checkin and checkout date - returns True.
+:return: bool</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_str">
+<code class="descname">get_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method used to return information about booking in str
+form.
+:return: str :  id, checkin, checkout, num_days,</p>
+<blockquote>
+<div><p>price_per_night, site,
+revenue, cost [additional cost1;</p>
+<blockquote>
+<div><p>additional cost2 …]</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="booking.Booking.get_sum_costs">
+<code class="descname">get_sum_costs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#booking.Booking.get_sum_costs" title="Permalink to this definition">¶</a></dt>
+<dd><p>A method returns sum of all additional costs.
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">HMH Project</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Denys Udud.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/booking.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
